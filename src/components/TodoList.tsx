@@ -31,13 +31,11 @@ export default function TodoList() {
     const hideTodoEditForm = () => toggleEditFormVisibility(() => false);
 
     const createNewTodo = (newTodo: ListItem) => {
-        console.error('createNewTodo', newTodo);
         updateList((prevList) => ([ ...prevList,  newTodo]));
         hideTodoEditForm();
     }
 
     const updateTodo = (updatedTodo: ListItem) => {
-        console.error('updateTodo', updatedTodo);
         updateList((prevList) => {
             return prevList.map((todo) => {
                 if (todo.id === updatedTodo.id) {
@@ -51,12 +49,10 @@ export default function TodoList() {
     }
 
     const removeTodo = (id: ListItemId) => {
-        console.error('removeTodo', id);
         updateList((prevList) => prevList.filter((item) => item.id !== id));
     }
 
     const selectTodoToEdit = (todo: ListItem) => {
-        console.error('selectTodoToEdit', todo);
         updateEditableListItem(() => todo);
         showTodoEditForm();
     }

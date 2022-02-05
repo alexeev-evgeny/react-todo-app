@@ -23,7 +23,6 @@ export default function TodoEditForm({ editableTodo, onCreate, onUpdate, onClose
     }
 
     const submit = () => {
-        console.error('submit', editableTodo);
         const todo = getNewTodo();
         editableTodo ? onUpdate(todo) : onCreate(todo);
     }
